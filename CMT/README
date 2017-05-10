@@ -1,0 +1,9 @@
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Date: yyyymmddhhmm00; ML: local magnitude; Mw: moment magnitude; Mo: seismic moment (dyne.cm); CD: centroid depth (km); NS: number of stations used to,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"calculate solution; DC: percent double-couple; Mxx, Mxy, Mxz, Myy, Myz, Mzz: moment tensor elements; VR: percent variance reduction for solution; Tva, Tpl, Taz:",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"value, plunge and azimuth for tension axis; Nva, Npl, Naz: value, plunge and azimuth for null axis; Pva, Ppl, Paz: value plunge and azimuth for compression axis.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NOTE1: The Dusky Sound (20090715092200) earthquake is the USGS W-phase solution as a reliable regional moment tensor solution could not be calculated.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NOTE2: The Kaikoura (20161113110200) earthquake is the USGS W-phase solution as a reliable regional moment tensor solution could not be calculated.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NOTE3: Event ID's with 9999999 are events for which no event ID is currently available.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NOTE4: Beginning 5 September 2012 event ID/location/ML come from SeisComP3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+

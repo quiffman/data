@@ -2076,11 +2076,3 @@ EVENT_ID,Date,Latitude,Longitude,str,dp,rake,str,dp,rake,ML,Mw,Mo,CD,NS,DC,Mxx,M
 2017p303640,20170423081900,-42.5051,173.4881,57,78,142,157,53,15,3.8,3.7,5.07E+21,16,5,83,25.68,23.37,26.29,-39.81,-11.02,14.13,70,-52.87,35,10,48.45,50,222,4.42,16,112
 2017p311750,20170426082000,-41.7106,174.2249,320,79,20,226,70,168,3.9,3.7,4.12E+21,14,6,51,31.87,3.75,-8.09,-46.02,-6.89,14.14,63,35.46,22,185,11.44,67,347,-46.90,6,92
 2017p324345,20170501001100,-45.3568,166.9223,313,89,-15,43,75,-179,4.4,4.0,1.24E+22,28,4,73,112.50,-8.99,17.55,-127.36,28.24,14.85,65,115.63,10,359,17.73,75,129,-133.36,11,268
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Date: yyyymmddhhmm00; ML: local magnitude; Mw: moment magnitude; Mo: seismic moment (dyne.cm); CD: centroid depth (km); NS: number of stations used to,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-"calculate solution; DC: percent double-couple; Mxx, Mxy, Mxz, Myy, Myz, Mzz: moment tensor elements; VR: percent variance reduction for solution; Tva, Tpl, Taz:",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-"value, plunge and azimuth for tension axis; Nva, Npl, Naz: value, plunge and azimuth for null axis; Pva, Ppl, Paz: value plunge and azimuth for compression axis.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-NOTE1: The Dusky Sound (20090715092200) earthquake is the USGS W-phase solution as a reliable regional moment tensor solution could not be calculated.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-NOTE2: The Kaikoura (20161113110200) earthquake is the USGS W-phase solution as a reliable regional moment tensor solution could not be calculated.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-NOTE3: Event ID's with 9999999 are events for which no event ID is currently available.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-NOTE4: Beginning 5 September 2012 event ID/location/ML come from SeisComP3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
