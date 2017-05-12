@@ -58,7 +58,7 @@ type CMT struct {
 	Mw        float64
 	Mo        float64
 	CD        int16
-	NS        int16
+	NS        *int16
 	DC        int16
 	Mxx       float64
 	Mxy       float64
@@ -66,7 +66,7 @@ type CMT struct {
 	Myy       float64
 	Myz       float64
 	Mzz       float64
-	VR        int16
+	VR        *int16
 	Tva       float64
 	Tpl       int16
 	Taz       int16
@@ -226,7 +226,7 @@ func (c *CMT) decode(row []string) error {
 		Mw:        *tMw,
 		Mo:        *tMo,
 		CD:        *tCD,
-		NS:        *tNS,
+		NS:        tNS,
 		DC:        *tDC,
 		Mxx:       *tMxx,
 		Mxy:       *tMxy,
@@ -234,7 +234,7 @@ func (c *CMT) decode(row []string) error {
 		Myy:       *tMyy,
 		Myz:       *tMyz,
 		Mzz:       *tMzz,
-		VR:        *tVR,
+		VR:        tVR,
 		Tva:       *tTva,
 		Tpl:       *tTpl,
 		Taz:       *tTaz,
@@ -266,7 +266,11 @@ func (c CMT) encode() []string {
 	row = append(row, strconv.FormatFloat(c.Mw, 'f', 1, 64))
 	row = append(row, strconv.FormatFloat(c.Mo, 'E', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.CD), 10))
-	row = append(row, strconv.FormatInt(int64(c.NS), 10))
+	if c.NS != nil {
+		row = append(row, strconv.FormatInt(int64(*c.NS), 10))
+	} else {
+		row = append(row, "n/a")
+	}
 	row = append(row, strconv.FormatInt(int64(c.DC), 10))
 	row = append(row, strconv.FormatFloat(c.Mxx, 'f', 2, 64))
 	row = append(row, strconv.FormatFloat(c.Mxy, 'f', 2, 64))
@@ -274,7 +278,11 @@ func (c CMT) encode() []string {
 	row = append(row, strconv.FormatFloat(c.Myy, 'f', 2, 64))
 	row = append(row, strconv.FormatFloat(c.Myz, 'f', 2, 64))
 	row = append(row, strconv.FormatFloat(c.Mzz, 'f', 2, 64))
-	row = append(row, strconv.FormatInt(int64(c.VR), 10))
+	if c.VR != nil {
+		row = append(row, strconv.FormatInt(int64(*c.VR), 10))
+	} else {
+		row = append(row, "n/a")
+	}
 	row = append(row, strconv.FormatFloat(c.Tva, 'f', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.Tpl), 10))
 	row = append(row, strconv.FormatInt(int64(c.Taz), 10))

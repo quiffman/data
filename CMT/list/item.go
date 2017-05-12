@@ -19,6 +19,9 @@ func parseBool(str string) (bool, error) {
 func parseInt16(str string) (*int16, error) {
 	if str != "" {
 		return func() (*int16, error) {
+			if str == "n/a" {
+				return nil, nil
+			}
 			i1, e := strconv.ParseInt(parseRaw(str), 10, 16)
 			if e != nil {
 				return nil, e
