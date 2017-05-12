@@ -46,34 +46,34 @@ const (
 type CMT struct {
 	EVENT_ID  string
 	Date      time.Time
-	Latitude  float32
-	Longitude float32
+	Latitude  float64
+	Longitude float64
 	Str1      int16
 	Dp1       int16
 	Rake1     int16
 	Str2      int16
 	Dp2       int16
 	Rake2     int16
-	ML        float32
-	Mw        float32
+	ML        float64
+	Mw        float64
 	Mo        float64
 	CD        int16
 	NS        int16
 	DC        int16
-	Mxx       float32
-	Mxy       float32
-	Mxz       float32
-	Myy       float32
-	Myz       float32
-	Mzz       float32
+	Mxx       float64
+	Mxy       float64
+	Mxz       float64
+	Myy       float64
+	Myz       float64
+	Mzz       float64
 	VR        int16
-	Tva       float32
+	Tva       float64
 	Tpl       int16
 	Taz       int16
-	Nva       float32
+	Nva       float64
 	Npl       int16
 	Naz       int16
-	Pva       float32
+	Pva       float64
 	Ppl       int16
 	Paz       int16
 }
@@ -90,11 +90,11 @@ func (c *CMT) decode(row []string) error {
 		return err
 	}
 
-	tLatitude, err := parseFloat32(row[cmtLatitude])
+	tLatitude, err := parseFloat64(row[cmtLatitude])
 	if err != nil {
 		return err
 	}
-	tLongitude, err := parseFloat32(row[cmtLongitude])
+	tLongitude, err := parseFloat64(row[cmtLongitude])
 	if err != nil {
 		return err
 	}
@@ -122,11 +122,11 @@ func (c *CMT) decode(row []string) error {
 	if err != nil {
 		return err
 	}
-	tML, err := parseFloat32(row[cmtML])
+	tML, err := parseFloat64(row[cmtML])
 	if err != nil {
 		return err
 	}
-	tMw, err := parseFloat32(row[cmtMw])
+	tMw, err := parseFloat64(row[cmtMw])
 	if err != nil {
 		return err
 	}
@@ -146,27 +146,27 @@ func (c *CMT) decode(row []string) error {
 	if err != nil {
 		return err
 	}
-	tMxx, err := parseFloat32(row[cmtMxx])
+	tMxx, err := parseFloat64(row[cmtMxx])
 	if err != nil {
 		return err
 	}
-	tMxy, err := parseFloat32(row[cmtMxy])
+	tMxy, err := parseFloat64(row[cmtMxy])
 	if err != nil {
 		return err
 	}
-	tMxz, err := parseFloat32(row[cmtMxz])
+	tMxz, err := parseFloat64(row[cmtMxz])
 	if err != nil {
 		return err
 	}
-	tMyy, err := parseFloat32(row[cmtMyy])
+	tMyy, err := parseFloat64(row[cmtMyy])
 	if err != nil {
 		return err
 	}
-	tMyz, err := parseFloat32(row[cmtMyz])
+	tMyz, err := parseFloat64(row[cmtMyz])
 	if err != nil {
 		return err
 	}
-	tMzz, err := parseFloat32(row[cmtMzz])
+	tMzz, err := parseFloat64(row[cmtMzz])
 	if err != nil {
 		return err
 	}
@@ -174,7 +174,7 @@ func (c *CMT) decode(row []string) error {
 	if err != nil {
 		return err
 	}
-	tTva, err := parseFloat32(row[cmtTva])
+	tTva, err := parseFloat64(row[cmtTva])
 	if err != nil {
 		return err
 	}
@@ -186,7 +186,7 @@ func (c *CMT) decode(row []string) error {
 	if err != nil {
 		return err
 	}
-	tNva, err := parseFloat32(row[cmtNva])
+	tNva, err := parseFloat64(row[cmtNva])
 	if err != nil {
 		return err
 	}
@@ -198,7 +198,7 @@ func (c *CMT) decode(row []string) error {
 	if err != nil {
 		return err
 	}
-	tPva, err := parseFloat32(row[cmtPva])
+	tPva, err := parseFloat64(row[cmtPva])
 	if err != nil {
 		return err
 	}
@@ -254,34 +254,34 @@ func (c CMT) encode() []string {
 
 	row = append(row, c.EVENT_ID)
 	row = append(row, c.Date.Format(DateFormat))
-	row = append(row, strconv.FormatFloat(float64(c.Latitude), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Longitude), 'f', -1, 32))
+	row = append(row, strconv.FormatFloat(c.Latitude, 'f', 4, 64))
+	row = append(row, strconv.FormatFloat(c.Longitude, 'f', 4, 64))
 	row = append(row, strconv.FormatInt(int64(c.Str1), 10))
 	row = append(row, strconv.FormatInt(int64(c.Dp1), 10))
 	row = append(row, strconv.FormatInt(int64(c.Rake1), 10))
 	row = append(row, strconv.FormatInt(int64(c.Str2), 10))
 	row = append(row, strconv.FormatInt(int64(c.Dp2), 10))
 	row = append(row, strconv.FormatInt(int64(c.Rake2), 10))
-	row = append(row, strconv.FormatFloat(float64(c.ML), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Mw), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(c.Mo, 'E', -1, 32))
+	row = append(row, strconv.FormatFloat(c.ML, 'f', 1, 64))
+	row = append(row, strconv.FormatFloat(c.Mw, 'f', 1, 64))
+	row = append(row, strconv.FormatFloat(c.Mo, 'E', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.CD), 10))
 	row = append(row, strconv.FormatInt(int64(c.NS), 10))
 	row = append(row, strconv.FormatInt(int64(c.DC), 10))
-	row = append(row, strconv.FormatFloat(float64(c.Mxx), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Mxy), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Mxz), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Myy), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Myz), 'f', -1, 32))
-	row = append(row, strconv.FormatFloat(float64(c.Mzz), 'f', -1, 32))
+	row = append(row, strconv.FormatFloat(c.Mxx, 'f', 2, 64))
+	row = append(row, strconv.FormatFloat(c.Mxy, 'f', 2, 64))
+	row = append(row, strconv.FormatFloat(c.Mxz, 'f', 2, 64))
+	row = append(row, strconv.FormatFloat(c.Myy, 'f', 2, 64))
+	row = append(row, strconv.FormatFloat(c.Myz, 'f', 2, 64))
+	row = append(row, strconv.FormatFloat(c.Mzz, 'f', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.VR), 10))
-	row = append(row, strconv.FormatFloat(float64(c.Tva), 'f', -1, 32))
+	row = append(row, strconv.FormatFloat(c.Tva, 'f', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.Tpl), 10))
 	row = append(row, strconv.FormatInt(int64(c.Taz), 10))
-	row = append(row, strconv.FormatFloat(float64(c.Nva), 'f', -1, 32))
+	row = append(row, strconv.FormatFloat(c.Nva, 'f', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.Npl), 10))
 	row = append(row, strconv.FormatInt(int64(c.Naz), 10))
-	row = append(row, strconv.FormatFloat(float64(c.Pva), 'f', -1, 32))
+	row = append(row, strconv.FormatFloat(c.Pva, 'f', 2, 64))
 	row = append(row, strconv.FormatInt(int64(c.Ppl), 10))
 	row = append(row, strconv.FormatInt(int64(c.Paz), 10))
 

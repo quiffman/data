@@ -30,21 +30,6 @@ func parseInt16(str string) (*int16, error) {
 	return nil, nil
 }
 
-// parseFloat32 returns a float32 value from a raw item.
-func parseFloat32(str string) (*float32, error) {
-	if str != "" {
-		return func() (*float32, error) {
-			f1, e := strconv.ParseFloat(parseRaw(str), 32)
-			if e != nil {
-				return nil, e
-			}
-			f := float32(f1)
-			return &f, nil
-		}()
-	}
-	return nil, nil
-}
-
 // parseFloat64 returns a float64 value from a raw item.
 func parseFloat64(str string) (*float64, error) {
 	if str != "" {
